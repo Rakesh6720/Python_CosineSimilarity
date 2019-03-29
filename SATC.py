@@ -66,19 +66,24 @@ def calculate_cosine_similarity(vector_a, vector_b):
 #cosine_similarity_final = numerator / denominator
 
 #print(cosine_similarity_final)
+
 cosine_values = []
 
 cosine1 = calculate_cosine_similarity(gita, samantha)
 cosine_values.append(cosine1)
+cosine_values.append('samantha')
 
 cosine2 = calculate_cosine_similarity(gita, carrie)
 cosine_values.append(cosine2)
+cosine_values.append('carrie')
 
 cosine3 = calculate_cosine_similarity(gita, charlotte)
 cosine_values.append(cosine3)
+cosine_values.append('charlotte')
 
 cosine4 = calculate_cosine_similarity(gita, miranda)
 cosine_values.append(cosine4)
+cosine_values.append('miranda')
 
 for i in range(len(cosine_values)):
 
@@ -87,15 +92,16 @@ for i in range(len(cosine_values)):
         top_value_index = i
         #print(i)
     else:
-        current_value = cosine_values[i]
-        current_index = i
-        if top_value.real < current_value.real: #you have to access the real part of the number cause the imaginary parts can't sort or compare
-            top_value.real = current_value.real
-            top_value_index = current_index
-        #else:
-            #print(top_value_index)
+        if i % 2 == 0:
+            current_value = cosine_values[i]
+            current_index = i
+            if top_value.real < current_value.real: #you have to access the real part of the number cause the imaginary parts can't sort or compare
+                top_value.real = current_value.real
+                top_value_index = current_index
+
 
 print(top_value_index)
+print(cosine_values[top_value_index + 1])
 print(cosine_values[top_value_index].real)
 
 

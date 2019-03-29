@@ -5,12 +5,14 @@ import cmath
 # decorrelation, while in-between values indicate intermediate similarity 
 # or dissimilarity.
 
+
 samantha = [.6, .8, -1, 1, .8, 1]
 carrie = [.8, .6, 0, .7, -.3, .3]
 charlotte = [-.3, -.6, .8, .5, 1, -.4]
 miranda = [.9, .4, 1, -.2, .3, .8]
 gita = [.5, 1, -.5, .5, 1, .5]
 
+user = gita
 
 def add_and_square(vector_n):
     numbers2 = []
@@ -69,19 +71,19 @@ def calculate_cosine_similarity(vector_a, vector_b):
 
 cosine_values = []
 
-cosine1 = calculate_cosine_similarity(gita, samantha)
+cosine1 = calculate_cosine_similarity(user, samantha)
 cosine_values.append(cosine1)
 cosine_values.append('samantha')
 
-cosine2 = calculate_cosine_similarity(gita, carrie)
+cosine2 = calculate_cosine_similarity(user, carrie)
 cosine_values.append(cosine2)
 cosine_values.append('carrie')
 
-cosine3 = calculate_cosine_similarity(gita, charlotte)
+cosine3 = calculate_cosine_similarity(user, charlotte)
 cosine_values.append(cosine3)
 cosine_values.append('charlotte')
 
-cosine4 = calculate_cosine_similarity(gita, miranda)
+cosine4 = calculate_cosine_similarity(user, miranda)
 cosine_values.append(cosine4)
 cosine_values.append('miranda')
 

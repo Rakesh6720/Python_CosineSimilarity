@@ -14,6 +14,18 @@ gita = [.5, 1, -.5, .5, 1, .5]
 
 user = gita
 
+def capture_user_input():
+    print('Please answer the following 6 questions by entering an integer or decimal number on your keypad and pressing enter')
+    print('On a scale from -1 to 1 where -1 is Oblivious and 1 is Self-Aware, how would you rate yourself? (Including up to 1 decimal place)')
+    answer1 = input()
+    print('On a scale from -1 to 1 where -1 is Serious and 1 is a Joke Fest, how would you rate yourself? (Including up to 1 decimal place)')
+    answer2 = input()
+    print('On a scale from -1 to 1 where -1 is Care-Free and 1 is Neurotic, how would you rate yourself? (Including up to 1 decimal place)')
+    print('On a scale from -1 to 1 where -1 is Insecure and 1 is Confident, how would you rank yourself? (Including up to 1 decimal place) ')
+    answer4 = input()
+    print('On a scale from -1 to 1 where -1 is Blue Collar and 1 is Of Means, how would you rank yourself? (Including up to 1 decimal place)')
+    answer5 = input()
+    print('On a scale of -1 to 1 where -1 is Entitled and 1 is Ambitious, how would you rate yourself? (Including up to 1 decimal place)')
 def add_and_square(vector_n):
     numbers2 = []
     for i in range(len(vector_n)):

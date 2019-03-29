@@ -111,19 +111,19 @@ cosine_values = []
 
 cosine1 = calculate_cosine_similarity(user_vector, samantha)
 cosine_values.append(cosine1)
-cosine_values.append('samantha')
+cosine_values.append('Samantha')
 
 cosine2 = calculate_cosine_similarity(user_vector, carrie)
 cosine_values.append(cosine2)
-cosine_values.append('carrie')
+cosine_values.append('Carrie')
 
 cosine3 = calculate_cosine_similarity(user_vector, charlotte)
 cosine_values.append(cosine3)
-cosine_values.append('charlotte')
+cosine_values.append('Charlotte')
 
 cosine4 = calculate_cosine_similarity(user_vector, miranda)
 cosine_values.append(cosine4)
-cosine_values.append('miranda')
+cosine_values.append('Miranda')
 
 for i in range(len(cosine_values)):
 
@@ -142,7 +142,7 @@ for i in range(len(cosine_values)):
 
 print(top_value_index)
 print(user_name + ', you are a total ')
-print(cosine_values[top_value_index + 1])
+print(cosine_values[top_value_index + 1] + '!')
 print('You are a ' + str(cosine_values[top_value_index].real * 100) + '% match!')
 print(cosine_values[top_value_index].real)
 

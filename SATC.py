@@ -15,11 +15,12 @@ gita = [.5, 1, -.5, .5, 1, .5]
 test_user = gita
 user_character_vector = []
 
-def capture_user_input():
-    print('Please answer the following 7 questions by entering an integer or decimal number on your keypad and pressing enter.')
+print('Please answer the following 7 questions by entering an integer or decimal number on your keypad and pressing enter.')
 
-    print('First, can you please tell me your name?')
-    user_name = input()
+print('First, can you please tell me your name?')
+user_name = input()
+
+def capture_user_input():
     
     print('On a scale from -1 to 1 where -1 is Oblivious and 1 is Self-Aware, how would you rate yourself? (Including up to 1 decimal place)...')
     answer1 = float(input())
@@ -45,9 +46,9 @@ def capture_user_input():
     answer6 = float(input())
     user_character_vector.append(answer6)
 
-    user_name = user_character_vector
+    user_vector = user_character_vector
 
-    return user_name
+    return user_vector
 
 def add_and_square(vector_n):
     numbers2 = []
@@ -104,30 +105,30 @@ def calculate_cosine_similarity(vector_a, vector_b):
 
 #print(cosine_similarity_final)
 
-user_name = capture_user_input()
+user_vector = capture_user_input()
 
 cosine_values = []
 
-cosine1 = calculate_cosine_similarity(user_name, samantha)
+cosine1 = calculate_cosine_similarity(user_vector, samantha)
 cosine_values.append(cosine1)
 cosine_values.append('samantha')
 
-cosine2 = calculate_cosine_similarity(user_name, carrie)
+cosine2 = calculate_cosine_similarity(user_vector, carrie)
 cosine_values.append(cosine2)
 cosine_values.append('carrie')
 
-cosine3 = calculate_cosine_similarity(user_name, charlotte)
+cosine3 = calculate_cosine_similarity(user_vector, charlotte)
 cosine_values.append(cosine3)
 cosine_values.append('charlotte')
 
-cosine4 = calculate_cosine_similarity(user_name, miranda)
+cosine4 = calculate_cosine_similarity(user_vector, miranda)
 cosine_values.append(cosine4)
 cosine_values.append('miranda')
 
 for i in range(len(cosine_values)):
 
     if i < 1:
-        top_value = cosine_values[i]
+        top_value = cosine_values[i].real
         top_value_index = i
         #print(i)
     else:
@@ -135,14 +136,14 @@ for i in range(len(cosine_values)):
             current_value = cosine_values[i]
             current_index = i
             if top_value.real < current_value.real: #you have to access the real part of the number cause the imaginary parts can't sort or compare
-                top_value.real = current_value.real
+                top_value = current_value
                 top_value_index = current_index
 
 
 print(top_value_index)
 print(user_name + ', you are a total ')
 print(cosine_values[top_value_index + 1])
-print('You are a ' + cosine_values[top_value_index].real * 100 + '% match!')
+print('You are a ' + str(cosine_values[top_value_index].real * 100) + '% match!')
 print(cosine_values[top_value_index].real)
 
 

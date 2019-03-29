@@ -12,20 +12,43 @@ charlotte = [-.3, -.6, .8, .5, 1, -.4]
 miranda = [.9, .4, 1, -.2, .3, .8]
 gita = [.5, 1, -.5, .5, 1, .5]
 
-user = gita
+test_user = gita
+user_character_vector = []
 
 def capture_user_input():
-    print('Please answer the following 6 questions by entering an integer or decimal number on your keypad and pressing enter')
-    print('On a scale from -1 to 1 where -1 is Oblivious and 1 is Self-Aware, how would you rate yourself? (Including up to 1 decimal place)')
-    answer1 = input()
-    print('On a scale from -1 to 1 where -1 is Serious and 1 is a Joke Fest, how would you rate yourself? (Including up to 1 decimal place)')
-    answer2 = input()
-    print('On a scale from -1 to 1 where -1 is Care-Free and 1 is Neurotic, how would you rate yourself? (Including up to 1 decimal place)')
-    print('On a scale from -1 to 1 where -1 is Insecure and 1 is Confident, how would you rank yourself? (Including up to 1 decimal place) ')
-    answer4 = input()
-    print('On a scale from -1 to 1 where -1 is Blue Collar and 1 is Of Means, how would you rank yourself? (Including up to 1 decimal place)')
-    answer5 = input()
-    print('On a scale of -1 to 1 where -1 is Entitled and 1 is Ambitious, how would you rate yourself? (Including up to 1 decimal place)')
+    print('Please answer the following 7 questions by entering an integer or decimal number on your keypad and pressing enter.')
+
+    print('First, can you please tell me your name?')
+    user_name = input()
+    
+    print('On a scale from -1 to 1 where -1 is Oblivious and 1 is Self-Aware, how would you rate yourself? (Including up to 1 decimal place)...')
+    answer1 = float(input())
+    user_character_vector.append(answer1)
+    
+    print('On a scale from -1 to 1 where -1 is Serious and 1 is a Joke Fest, how would you rate yourself? (Including up to 1 decimal place)...')
+    answer2 = float(input())
+    user_character_vector.append(answer2)
+
+    print('On a scale from -1 to 1 where -1 is Care-Free and 1 is Neurotic, how would you rate yourself? (Including up to 1 decimal place)...')
+    answer3 = float(input())
+    user_character_vector.append(answer3)
+    
+    print('On a scale from -1 to 1 where -1 is Insecure and 1 is Confident, how would you rank yourself? (Including up to 1 decimal place)...')
+    answer4 = float(input())
+    user_character_vector.append(answer4)
+
+    print('On a scale from -1 to 1 where -1 is Blue Collar and 1 is Of Means, how would you rank yourself? (Including up to 1 decimal place)...')
+    answer5 = float(input())
+    user_character_vector.append(answer5)
+
+    print('On a scale of -1 to 1 where -1 is Entitled and 1 is Ambitious, how would you rate yourself? (Including up to 1 decimal place)...')
+    answer6 = float(input())
+    user_character_vector.append(answer6)
+
+    user_name = user_character_vector
+
+    return user_name
+
 def add_and_square(vector_n):
     numbers2 = []
     for i in range(len(vector_n)):
@@ -81,21 +104,23 @@ def calculate_cosine_similarity(vector_a, vector_b):
 
 #print(cosine_similarity_final)
 
+user_name = capture_user_input()
+
 cosine_values = []
 
-cosine1 = calculate_cosine_similarity(user, samantha)
+cosine1 = calculate_cosine_similarity(user_name, samantha)
 cosine_values.append(cosine1)
 cosine_values.append('samantha')
 
-cosine2 = calculate_cosine_similarity(user, carrie)
+cosine2 = calculate_cosine_similarity(user_name, carrie)
 cosine_values.append(cosine2)
 cosine_values.append('carrie')
 
-cosine3 = calculate_cosine_similarity(user, charlotte)
+cosine3 = calculate_cosine_similarity(user_name, charlotte)
 cosine_values.append(cosine3)
 cosine_values.append('charlotte')
 
-cosine4 = calculate_cosine_similarity(user, miranda)
+cosine4 = calculate_cosine_similarity(user_name, miranda)
 cosine_values.append(cosine4)
 cosine_values.append('miranda')
 
@@ -115,7 +140,9 @@ for i in range(len(cosine_values)):
 
 
 print(top_value_index)
+print(user_name + ', you are a total ')
 print(cosine_values[top_value_index + 1])
+print('You are a ' + cosine_values[top_value_index].real * 100 + '% match!')
 print(cosine_values[top_value_index].real)
 
 

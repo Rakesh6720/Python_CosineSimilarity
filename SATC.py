@@ -66,10 +66,38 @@ def calculate_cosine_similarity(vector_a, vector_b):
 #cosine_similarity_final = numerator / denominator
 
 #print(cosine_similarity_final)
+cosine_values = []
 
-print(calculate_cosine_similarity(gita, samantha))
-print(calculate_cosine_similarity(gita, carrie))
-print(calculate_cosine_similarity(gita, charlotte))
-print(calculate_cosine_similarity(gita, miranda))
+cosine1 = calculate_cosine_similarity(gita, samantha)
+cosine_values.append(cosine1)
+
+cosine2 = calculate_cosine_similarity(gita, carrie)
+cosine_values.append(cosine2)
+
+cosine3 = calculate_cosine_similarity(gita, charlotte)
+cosine_values.append(cosine3)
+
+cosine4 = calculate_cosine_similarity(gita, miranda)
+cosine_values.append(cosine4)
+
+for i in range(len(cosine_values)):
+
+    if i < 1:
+        top_value = cosine_values[i]
+        top_value_index = i
+        print(i)
+    else:
+        current_value = cosine_values[i]
+        current_index = i
+        if top_value.real < current_value.real:
+            top_value.real = current_value.real
+            top_value_index = current_index
+        else:
+            print(top_value_index)
+
+print(top_value.real)
+print(top_value_index)
+print(cosine_values[top_value_index].real)
+
 
 

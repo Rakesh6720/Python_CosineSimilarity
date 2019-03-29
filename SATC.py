@@ -85,17 +85,16 @@ for i in range(len(cosine_values)):
     if i < 1:
         top_value = cosine_values[i]
         top_value_index = i
-        print(i)
+        #print(i)
     else:
         current_value = cosine_values[i]
         current_index = i
-        if top_value.real < current_value.real:
+        if top_value.real < current_value.real: #you have to access the real part of the number cause the imaginary parts can't sort or compare
             top_value.real = current_value.real
             top_value_index = current_index
-        else:
-            print(top_value_index)
+        #else:
+            #print(top_value_index)
 
-print(top_value.real)
 print(top_value_index)
 print(cosine_values[top_value_index].real)
 

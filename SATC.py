@@ -2,6 +2,9 @@ import math
 import cmath
 
 samantha = [.6, .8, -1, 1, .8, 1]
+carrie = [.8, .6, 0, .7, -.3, .3]
+charlotte = [-.3, -.6, .8, .5, 1, -.4]
+miranda = [.9, .4, 1, -.2, .3, .8]
 gita = [-.5, -1, .5, -.5, -1, -.5]
 
 
